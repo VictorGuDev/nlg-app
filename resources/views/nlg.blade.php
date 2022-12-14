@@ -16,32 +16,34 @@
     <form>
         <div class="row">
             <div class="col-md-6">
-                <img src="{{ asset('images/avg_time_to_hire.PNG') }}" alt="Picture 1" width="500" height="300">
+                <img src="{{ asset('images/avg_time_to_hire.PNG') }}" alt="Average Time to Hire" width="500" height="300">
             </div>
             <div class="form-group col-md-6">
-                <label for="text1">Text 1</label>
-                <input type="text" class="form-control" id="text1">
+                <label for="text1">Average Time to Hire</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" >{{ $avgTimeToHireMsg }}</textarea>
+                <button class="btn-primary" style="margin-top: 10px;">Save</button>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <img src="{{ asset('images/absence.PNG') }}" alt="Picture 2" width="500" height="300">
+                <img src="{{ asset('images/absence.PNG') }}" alt="Leavers" width="500" height="300">
             </div>
             <div class="form-group col-md-6">
-                <label for="text2">Text 2</label>
-                <input type="text" class="form-control" id="text2">
+                <label for="text2">Leavers</label>
+                <textarea class="form-control" id="exampleFormControlTextarea2" rows="4">{{ $absenceMsg }}</textarea>
+                <button class="btn-primary" style="margin-top: 10px;">Save</button>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <img src="{{ asset('images/position_cost.PNG') }}" alt="Picture 3" width="500" height="300">
+                <img src="{{ asset('images/position_cost.PNG') }}" alt="Average Position Cost" width="500" height="300">
             </div>
             <div class="form-group col-md-6">
-                <label for="text3">Text 1</label>
-                <input type="text" class="form-control" id="text3">
+                <label for="text3">Average Position Cost</label>
+                <textarea class="form-control" id="exampleFormControlTextarea3" rows="4">{{ $positionCostMsg }}</textarea>
+                <button class="btn-primary" style="margin-top: 10px;">Save</button>
             </div>
         </div>
-        <button class="btn-primary">Save</button>
     </form>
 </div>
 </body>

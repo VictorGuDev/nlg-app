@@ -13,7 +13,7 @@ class AbsenceGenerator
 
     public function generateDescription(array $data): string
     {
-        $msg = 'A total of ' . $this->repo->getLastYearValue($data) . ' employees left the organisation in ' . $this->repo->getLastYear($data) . '.';
+        $msg = 'A total of ' . $this->repo->getLastYearValue($data) . ' employees left the organization in ' . $this->repo->getLastYear($data) . '.';
         $msg .= 'This is a significant decrease versus the previous year, being ' . abs($this->repo->compareDifference($data))
             . ' (' . $this->repo->getDifferencePercentage($data) . '%) ' . $this->getCompareWord($data) . ' the ' . $this->repo->getYearBeforeLastYear($data) . ' number of leavers of ' . $this->repo->getYearBeforeLastYearValue($data) . '.';
         return $msg;

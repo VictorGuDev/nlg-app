@@ -13,13 +13,6 @@ class AbsenceController extends Controller
 
     public function getDescription(): string
     {
-        $data = [
-            2016 => 1,
-            2017 => 34,
-            2018 => 20,
-            2019 => 41,
-            2020 => 20,
-        ];
-        return $this->service->getDescription($data);
+        return $this->service->getDescription();
     }
 }

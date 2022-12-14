@@ -11,8 +11,9 @@ class AvgTimeToHireService
         $this->generator = $generator;
     }
 
-    public function getDescription(array $data): string
+    public function getDescription(): string
     {
+        $data = [];
         return $this->generator->generateDescription($data);
     }
 }
