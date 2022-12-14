@@ -2,11 +2,11 @@
 
 namespace App\Services;
 
-use App\Generator\AbsenceGenerator;
+use App\Generator\AvgTimeToHireGenerator;
 
-class AbsenceService
+class AvgTimeToHireService
 {
-    public function __construct(AbsenceGenerator $generator)
+    public function __construct(AvgTimeToHireGenerator $generator)
     {
         $this->generator = $generator;
     }

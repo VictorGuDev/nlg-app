@@ -4,10 +4,10 @@ namespace App\Contracts;
 
 interface AbsenceInterface
 {
-    public function getMax(array $absence): int;
-    public function getMin(array $absence): int;
-    public function getMaxAbsenceYear(array $absence): int;
-    public function getMinAbsenceYear(array $absence): int;
-    public function getFirstYear(array $absence): int;
     public function getLastYear(array $absence): int;
+    public function getLastYearValue(array $absence): int;
+    public function getYearBeforeLastYear(array $absence): int;
+    public function getYearBeforeLastYearValue(array $absence): int;
+    public function compareDifference(array $absence): int;
+    public function getDifferencePercentage(array $absence);
 }

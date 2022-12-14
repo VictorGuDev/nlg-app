@@ -6,12 +6,12 @@ use App\Services\AbsenceService;
 
 class AbsenceController extends Controller
 {
-    public function __construct(AbsenceService $absenceService)
+    public function __construct(AbsenceService $service)
     {
-        $this->absenceService = $absenceService;
+        $this->service = $service;
     }
 
-    public function getAbsenceDescription(): string
+    public function getDescription(): string
     {
         $data = [
             2016 => 1,
@@ -19,9 +19,7 @@ class AbsenceController extends Controller
             2018 => 20,
             2019 => 41,
             2020 => 20,
-            2021 => 33,
-            2022 => 22,
         ];
-        return $this->absenceService->getAbsenseDescription($data);
+        return $this->service->getDescription($data);
     }
 }

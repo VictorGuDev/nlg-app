@@ -2,11 +2,11 @@
 
 namespace App\Generator;
 
-use App\Repositories\AbsenceRepository;
+use App\Contracts\AbsenceInterface;
 
 class AbsenceGenerator
 {
-    public function __construct(AbsenceRepository $absenceRepository)
+    public function __construct(AbsenceInterface $absenceRepository)
     {
         $this->repo = $absenceRepository;
     }
@@ -14,24 +14,24 @@ class AbsenceGenerator
     public function generateDescription(array $data): string
     {
         $msg = 'A total of ' . $this->repo->getLastYearValue($data) . ' employees left the organisation in ' . $this->repo->getLastYear($data) . '.';
-        $msg .= 'This is a significant decrease versus the previous year, being 21 (105%) lower than the 2019 number of leavers of 41.';
+        $msg .= 'This is a significant decrease versus the previous year, being ' . abs($this->repo->compareDifference($data))
+            . ' (' . $this->repo->getDifferencePercentage($data) . '%) ' . $this->getCompareWord($data) . ' the ' . $this->repo->getYearBeforeLastYear($data) . ' number of leavers of ' . $this->repo->getYearBeforeLastYearValue($data) . '.';
         return $msg;
     }
 
-    public function getExtent(int $value): ?string
+    public function getCompareWord($data)
     {
-        if ($value >= 30) {
-            return 'significant';
+        if ($this->repo->compareDifference($data) >= 0) {
+            return 'higher than';
         }
-        if ($value <= 5) {
-            return 'slightly';
+
+        if ($this->repo->compareDifference($data) >= 0) {
+            return 'equal to';
         }
-        return null;
-    }
 
-    public function getDirection(int $value)
-    {
-
+        if ($this->repo->compareDifference($data) < 0) {
+            return 'lower than';
+        }
     }
 
 }

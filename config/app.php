@@ -190,6 +190,8 @@ return [
          * Application Service Providers...
          */
         App\Providers\AbsenceServiceProvider::class,
+        App\Providers\AvgTimeToHireServiceProvider::class,
+        App\Providers\PositionCostServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,

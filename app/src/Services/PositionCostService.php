@@ -2,11 +2,11 @@
 
 namespace App\Services;
 
-use App\Generator\AbsenceGenerator;
+use App\Generator\PositionCostGenerator;
 
-class AbsenceService
+class PositionCostService
 {
-    public function __construct(AbsenceGenerator $generator)
+    public function __construct(PositionCostGenerator $generator)
     {
         $this->generator = $generator;
     }
